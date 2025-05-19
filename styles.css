@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Quicksand:wght@400;500&display=swap");
 
-
 /* Desktop Grid */
 .col-1 {
   width: 8.33%;
@@ -53,11 +52,9 @@
   margin: 0;
 }
 
-
 .tabs input[type="radio"] {
   display: none;
 }
-
 
 .tabs label:hover {
   background: #3e2f40;
@@ -88,7 +85,6 @@
   flex: 1 1 100%;
   align-self: stretch;
 }
-
 
 .tabs input#tab1:checked ~ .content #content1,
 .tabs input#tab2:checked ~ .content #content2,
@@ -137,7 +133,6 @@ body {
   box-shadow: inset 0 0 0 8px #da6baa2d, inset 0 0 20px #b8418491;
   min-height: 100vh;
 }
-
 
 .hero-banner {
   height: 100vh;
@@ -241,7 +236,6 @@ ul {
   margin-top: 1rem;
   font-family: "IBM Plex Mono", monospace;
 }
-
 
 ul li::before {
   content: "🔮";
