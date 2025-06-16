@@ -1,0 +1,377 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #25021b; /* Deine gewünschte Farbe */
+  color: white; /* Besser lesbar als #863a3a */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: left 0.3s ease;
+}
+
+
+.sidebar img.profilbild {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px;
+  border: 4px solid rgb(158, 128, 138); /* 👈 Rahmen */
+  box-shadow: 0 0 10px rgba(8, 0, 7, 0.2); /* optional */
+  object-fit: cover;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.social-icons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid rgb(158, 128, 138); /* 👈 Rahmen */
+  color: rgb(158, 128, 138);
+  margin: 0 5px;
+  font-size: 16px;
+  transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background: white;
+  color: #911c6e; /* oder deine Sidebar-Farbe für Kontrast */
+}
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu a {
+  color: rgb(158, 128, 138);
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.menu a:hover {
+  border: 1px dashed #911c6e; /* gestrichelte Linie */
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05); /* optional leicht hinterlegt */
+}
+
+
+
+/* Hero-Bereich */
+.hero {
+  margin-left: 250px;
+  height: 100vh;
+  background: url('lib/Patricia_Bild_01.jpg') no-repeat 60% center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.hero-box {
+  background: rgba(0, 0, 0, 0.5); /* grau transparent */
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+  max-width: 90%;
+}
+
+.hero-box h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.hero-box p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+
+/* Für Mobile */
+@media (max-width: 768px) {
+  .hero {
+    margin-left: 0;
+    background-position: center center; /* hier wird’s zentriert */
+  }
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 24px;
+}
+
+/* Hamburger-Button (nur auf Mobile sichtbar) */
+.mobile-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 2000;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #fff;
+  display: none;
+}
+
+
+/* Bei Mobile: Sidebar ist ausgeblendet */
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    left: -250px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .hero,
+  .main-content,
+  .content-section {
+    margin-left: 0;
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* 👈 Steuert "Verblassung" */
+  z-index: 0;
+}
+
+.about-section {
+  margin-left: 250px;
+  padding: 60px 40px;
+  background: white;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.about-section h2 {
+  font-size: 32px;
+  border-bottom: 3px solid #911c6e;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* Bild */
+.about-img {
+  flex: 1 1 300px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.about-img img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  height: auto;
+}
+
+/* Textbereich */
+.about-info {
+  flex: 2 1 400px;
+  min-width: 280px;
+}
+
+.about-info h3 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.about-info em {
+  color: #911c6e;
+}
+
+/* Info-Grid */
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.info-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.info-grid li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.info-grid li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #911c6e;
+  font-weight: bold;
+}
+
+/* Responsive Mobile-Ansicht */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-info {
+    text-align: center;
+  }
+
+  .info-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-grid ul {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .about-section {
+    margin-left: 0;
+    padding: 40px 20px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-info {
+    text-align: center;
+  }
+
+  .info-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-grid ul {
+    width: 100%;
+  }
+
+  .about-img {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-img img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+.counters-section {
+  margin-left: 250px; /* Sidebar-Ausgleich für Desktop */
+  padding: 60px 20px;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.counter-box {
+  margin: 20px;
+  flex: 1 1 200px;
+  max-width: 300px;
+}
+
+.counter-box i {
+  font-size: 36px;
+  color: #911c6e;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.counter {
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* 📱 Mobilgeräte */
+@media (max-width: 768px) {
+  .counters-section {
+    margin-left: 0;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .counter-box {
+    width: 100%;
+    max-width: 320px;
+  }
+}
