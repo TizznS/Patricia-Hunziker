@@ -1,5 +1,5 @@
 "use strict";
-
+// Wenn Mobile verschwindet Nav mänu
 function toggleSidebar() {
   document.getElementById("sidebar").classList.toggle("active");
 }
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ✅ Animation Counter
+  // Animation Counter
   const counters = document.querySelectorAll('.counter');
   let hasCounted = false;
 
@@ -53,3 +53,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const targetSection = document.querySelector('.counters-section');
   if (targetSection) observer.observe(targetSection);
 });
+//Einfliegen von Resume
+document.addEventListener("DOMContentLoaded", function () {
+  const resumeContainer = document.querySelector(".resume-container");
+
+  if (resumeContainer) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          resumeContainer.classList.add("visible");
+          observer.disconnect(); // nur einmal animieren
+        }
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(resumeContainer);
+  }
+});
+
+// Fortschrittsbalken animation
+document.addEventListener("DOMContentLoaded", function () {
+  const skillElements = document.querySelectorAll(".skill");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+      }
+    });
+  }, { threshold: 0.3 });
+
+  skillElements.forEach((el) => observer.observe(el));
+});
+
