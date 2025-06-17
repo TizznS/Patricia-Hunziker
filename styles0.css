@@ -5,7 +5,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Sidebar */
+/* Navigation*/
 .sidebar {
   width: 250px;
   background: #25021b; /* Deine gewünschte Farbe */
@@ -88,7 +88,7 @@ body {
 
 
 
-/* Hero-Bereich */
+/* Home-Bereich */
 .hero {
   margin-left: 250px;
   height: 100vh;
@@ -192,13 +192,14 @@ body {
 
 .about-section {
   margin-left: 250px;
-  padding: 60px 40px;
+  padding: 20px 10px;
   background: white;
   color: #333;
   box-sizing: border-box;
 }
 
 .about-section h2 {
+    
   font-size: 32px;
   border-bottom: 3px solid #911c6e;
   display: inline-block;
@@ -333,7 +334,7 @@ body {
 
 .counters-section {
   margin-left: 250px; /* Sidebar-Ausgleich für Desktop */
-  padding: 60px 20px;
+  padding: 5px 5px;
   background: white;
   display: flex;
   flex-wrap: wrap;
@@ -381,7 +382,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   margin-left: 250px; /* Platz für Sidebar */
-  padding: 60px 40px;
+  padding: 5px 5px;
   background: white;
   color: #333;
   max-width: 1200px;
@@ -464,12 +465,6 @@ body {
   }
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-top: 20px;
-}
 
 .skill span {
   display: block;
@@ -478,12 +473,6 @@ body {
   font-size: 14px;
 }
 
-.progress-bar {
-  background: #e0e0e0;
-  height: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-}
 
 .progress {
   height: 100%;
@@ -491,21 +480,15 @@ body {
   transition: width 1s ease-in-out;
 }
 
-@media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
 /* Zentrierter Inhalt */
-.skills-inner {
+.skills-inner {  
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* Grid für Skills */
 .skills-grid {
+margin-bottom: 60px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
@@ -536,14 +519,89 @@ body {
   width: var(--target-width);
 }
 
-/* Responsiv */
-@media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Schwarze Balken nur für die Sprachen */
 .language-skill .progress {
   background-color: #111 !important;
+}
+
+.contact-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.contact-info, .contact-form {
+  flex: 1 1 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.info-block {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.info-block i {
+  font-size: 20px;
+  color: #911c6e;
+  margin-top: 5px;
+  min-width: 24px;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.contact-form button {
+  background: #911c6e;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #6d134f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+.section-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
 }

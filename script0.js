@@ -1,5 +1,5 @@
 "use strict";
-// Wenn Mobile verschwindet Nav mänu
+// Wenn Mobile verschwindet Nav menü
 function toggleSidebar() {
   document.getElementById("sidebar").classList.toggle("active");
 }
