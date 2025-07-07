@@ -106,3 +106,10 @@ function toggleSidebar() {
   sidebar.classList.toggle("active");
   document.body.classList.toggle("sidebar-open");
 }
+
+// Render-Server vorab aufwecken
+window.addEventListener("DOMContentLoaded", () => {
+  fetch("https://kontaktformular.onrender.com/ping")
+    .then(() => console.log("Render-Server wurde erfolgreich gepingt."))
+    .catch(() => console.warn("Ping fehlgeschlagen – Render-Server evtl. noch im Schlaf."));
+});
