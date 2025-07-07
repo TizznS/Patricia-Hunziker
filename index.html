@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="script0.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
   <body>
 
@@ -95,10 +96,8 @@
 <section id="about" class="about-section">
      <div class="section-inner">
   <h2>About</h2>
-  <p><br class="intro-text">
+  <p>
     I am motivated to tackle technical challenges with a solution-oriented mindset – focusing on usability, quality, and sustainable system operations.
-    <br> 
-    <br>
   </p>
 
   <div class="about-content">
@@ -293,7 +292,6 @@ My mission? Make IT feel less like a black box and more like a useful tool (even
   <!-- ========================================
        Contact
        ======================================== -->
-<!-- Funktioniert technisch noch nicht -->
 <section id="contact" class="contact-section">
   <div class="section-inner">
   <h2>Contact</h2>
@@ -331,18 +329,19 @@ My mission? Make IT feel less like a black box and more like a useful tool (even
     </div>
 </div>
     <!-- Rechte Seite https://www.w3schools.com/html/html_forms_attributes.asp-->
-    <div class="contact-form">
-      <form>
-        <div class="form-row">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <input type="phone" placeholder="Your Phone Number" required>
-        </div>
-        <input type="text" placeholder="Subject" required>
-        <textarea rows="6" placeholder="Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+<div class="contact-form">
+  <form action="https://kontaktformular.onrender.com/contact" method="POST">
+    <div class="form-row">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number" required>
     </div>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea rows="6" name="message" placeholder="Message" required></textarea>
+    <div class="g-recaptcha" data-sitekey="6Ld693orAAAAAJQWhbRAmnN4Z0UUFNWizL_yXPCI"></div>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
   </div>
 </section>
 

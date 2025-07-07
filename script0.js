@@ -1,8 +1,4 @@
 "use strict";
-// Wenn Mobile verschwindet Nav menü
-function toggleSidebar() {
-  document.getElementById("sidebar").classList.toggle("active");
-}
 
 document.addEventListener("DOMContentLoaded", function () {
   // Typed.js Initialisierung
@@ -18,12 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Animation Counter
-  const counters = document.querySelectorAll('.counter');
+  const counters = document.querySelectorAll(".counter");
   let hasCounted = false;
 
   function animateCounters() {
-    counters.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
+    counters.forEach((counter) => {
+      const target = +counter.getAttribute("data-target");
       let current = 0;
       const increment = Math.ceil(target / 100);
 
@@ -41,69 +37,72 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !hasCounted) {
-        hasCounted = true;
-        animateCounters();
-      }
-    });
-  }, { threshold: 0.3 });
+  const counterSection = document.querySelector(".counters-section");
+  if (counterSection) {
+    const counterObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasCounted) {
+            hasCounted = true;
+            animateCounters();
+            counterObserver.unobserve(counterSection);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
-  const targetSection = document.querySelector('.counters-section');
-  if (targetSection) observer.observe(targetSection);
-});
-//Einfliegen von Resume
-document.addEventListener("DOMContentLoaded", function () {
-  const resumeContainer = document.querySelector(".resume-container");
-
-  if (resumeContainer) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          resumeContainer.classList.add("visible");
-          observer.disconnect(); // nur einmal animieren
-        }
-      });
-    }, { threshold: 0.2 });
-
-    observer.observe(resumeContainer);
+    counterObserver.observe(counterSection);
   }
-});
 
-// Fortschrittsbalken animation
-document.addEventListener("DOMContentLoaded", function () {
+  // Einfliegen von Resume
+  const resumeContainer = document.querySelector(".resume-container");
+  if (resumeContainer) {
+    const resumeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            resumeContainer.classList.add("visible");
+            resumeObserver.disconnect(); // nur einmal animieren
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    resumeObserver.observe(resumeContainer);
+  }
+
+  // Fortschrittsbalken Animation
   const skillElements = document.querySelectorAll(".skill");
+  if (skillElements.length > 0) {
+    const skillObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-      }
-    });
-  }, { threshold: 0.3 });
+    skillElements.forEach((el) => skillObserver.observe(el));
+  }
 
-  skillElements.forEach((el) => observer.observe(el));
-});
-
-// Nav verschwindet nach Klick (Mobile)
-document.addEventListener("DOMContentLoaded", function () {
+  // Nav verschwindet nach Klick (Mobile)
   const menuLinks = document.querySelectorAll(".sidebar .menu a");
-  menuLinks.forEach(link => {
+  menuLinks.forEach((link) => {
     link.addEventListener("click", () => {
       document.getElementById("sidebar").classList.remove("active");
+      document.body.classList.remove("sidebar-open");
     });
   });
 });
 
+// Wenn Mobile: Sidebar Ein-/Ausblenden
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
   sidebar.classList.toggle("active");
   document.body.classList.toggle("sidebar-open");
 }
-
-
-
-
-
-
