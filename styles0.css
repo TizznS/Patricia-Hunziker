@@ -8,8 +8,8 @@ body {
 /* Navigation*/
 .sidebar {
   width: 250px;
-  background: #25021b; /* Deine gewünschte Farbe */
-  color: white; /* Besser lesbar als #863a3a */
+  background: #25021b; 
+  color: white; 
   height: 100vh;
   position: fixed;
   top: 0;
@@ -61,7 +61,7 @@ body {
 
 .social-icons a:hover {
   background: white;
-  color: #911c6e; /* oder deine Sidebar-Farbe für Kontrast */
+  color: #911c6e; 
 }
 .menu {
   list-style: none;
@@ -150,12 +150,13 @@ body {
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 2000;
+  z-index: 3000; /* höher als Sidebar */
   background: none;
   border: none;
   font-size: 28px;
-  color: #fff;
+  color: rgb(133, 35, 103); /* Default weiss */
   display: none;
+  transition: color 0.3s ease;
 }
 
 
@@ -164,6 +165,7 @@ body {
   .mobile-toggle {
     display: block;
   }
+
 
   .sidebar {
     left: -250px;
@@ -186,7 +188,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* 👈 Steuert "Verblassung" */
+  background: rgba(0, 0, 0, 0.4); 
   z-index: 0;
 }
 
@@ -198,8 +200,7 @@ body {
   box-sizing: border-box;
 }
 
-.about-section h2 {
-    
+h2 { 
   font-size: 32px;
   border-bottom: 3px solid #911c6e;
   display: inline-block;
@@ -481,9 +482,10 @@ body {
 }
 
 /* Zentrierter Inhalt */
-.skills-inner {  
-  max-width: 1200px;
+.section-inner {
+  max-width: 1140px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Grid für Skills */
@@ -600,8 +602,5 @@ margin-bottom: 60px;
   }
 }
 
-.section-inner {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+
+

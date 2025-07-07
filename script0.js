@@ -86,3 +86,24 @@ document.addEventListener("DOMContentLoaded", function () {
   skillElements.forEach((el) => observer.observe(el));
 });
 
+// Nav verschwindet nach Klick (Mobile)
+document.addEventListener("DOMContentLoaded", function () {
+  const menuLinks = document.querySelectorAll(".sidebar .menu a");
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      document.getElementById("sidebar").classList.remove("active");
+    });
+  });
+});
+
+function toggleSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.classList.toggle("active");
+  document.body.classList.toggle("sidebar-open");
+}
+
+
+
+
+
+

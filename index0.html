@@ -48,6 +48,12 @@
   <div class="profile">
     <img src="lib/Patricia_Bild_zugeschnitten.JPG" alt="Patricia" class="profilbild" />
     <h2>Patricia Hunziker</h2>
+    
+<!-- Hamburger Button für Mobile -->
+    <button class="mobile-toggle" onclick="toggleSidebar()">
+  <i class="fas fa-bars"></i>
+</button>
+
 
     <!-- Soziale Icons -->
     <div class="social-icons">
@@ -108,14 +114,14 @@
 
       <div class="info-grid">
         <ul>
-          <li><strong>Birthday:</strong> 28 June 1997</li>
-          <li><strong>Phone:</strong> +41 79 557 30 88</li>
+          <li><strong>Birthday:</strong> June 1997</li>
+          <li><strong>Phone:</strong> on request</li>
           <li><strong>City:</strong> Olten, Switzerland</li>
         </ul>
         <ul>
           <li><strong>Age:</strong> 28</li>
           <li><strong>Degree:</strong> HF Computer Science – System Engineering & Platform Development</li>
-          <li><strong>Email:</strong> patricia.hunziker7@gmail.com</li>
+          <li><strong>Email:</strong> contact form at the very bottom</li>
         </ul>
         <p>I keep critical systems running, even when users try their best to break them.
 Whether it's SAP acting up before coffee or mysterious error logs at 2 a.m. – I bring structure to the chaos with calm pragmatism, a sense of humor, and just the right amount of stubbornness.
@@ -182,8 +188,6 @@ My mission? Make IT feel less like a black box and more like a useful tool (even
         <p><em>ICT Service Manager with hands-on experience in SAP HCM and enterprise IT operations. Solution-oriented, structured, and user-focused.</em></p>
         <ul>
           <li>Olten, Switzerland</li>
-          <li>+41 79 557 30 88</li>
-          <li><a href="mailto:patricia.hunziker7@gmail.com">patricia.hunziker7@gmail.com</a></li>
         </ul>
       </div>
 
@@ -245,8 +249,8 @@ My mission? Make IT feel less like a black box and more like a useful tool (even
   <!-- ========================================
        Skills
        ======================================== -->
-<section id="skills" class="skills-section">
-  <div class="skills-inner">
+<section id="skills">
+  <div class="section-inner">
     <h2>ICT-Skills</h2>
     <div class="skills-grid">
       <div class="skill" style="--target-width: 40%"><span>PowerShell</span><div class="progress-bar"><div class="progress"></div></div></div>
@@ -267,7 +271,7 @@ My mission? Make IT feel less like a black box and more like a useful tool (even
 <p></p>
 <p></p>
 <section id="languages" class="skills-section">
-  <div class="skills-inner">
+  <div class="section-inner">
     <h2>Languages</h2>
     <p class="language-note">Not as thrilling as machine languages, but they follow me around anyway.</p>
     <div class="skills-grid">
@@ -291,9 +295,9 @@ My mission? Make IT feel less like a black box and more like a useful tool (even
        ======================================== -->
 <!-- Funktioniert technisch noch nicht -->
 <section id="contact" class="contact-section">
+  <div class="section-inner">
   <h2>Contact</h2>
   <p>Feel free to reach out — whether it's about tech, projects, or just to say hi!</p>
-
   <div class="contact-container">
     <!-- Linke Seite -->
     <div class="contact-info">
@@ -308,14 +312,14 @@ My mission? Make IT feel less like a black box and more like a useful tool (even
         <i class="fas fa-phone-alt"></i>
         <div>
           <strong>Call Me</strong><br>
-          +41 79 557 30 88
+          If you leave your phone number, I can give you a call.
         </div>
       </div>
       <div class="info-block">
         <i class="fas fa-envelope"></i>
         <div>
           <strong>Email</strong><br>
-          <a href="mailto:patricia.hunziker7@gmail.com">patricia.hunziker7@gmail.com</a>
+           Just drop me a message using the contact form.
         </div>
       </div>
       <div class="info-block">
@@ -325,13 +329,14 @@ My mission? Make IT feel less like a black box and more like a useful tool (even
         </iframe>
       </div>
     </div>
-
-    <!-- Rechte Seite -->
+</div>
+    <!-- Rechte Seite https://www.w3schools.com/html/html_forms_attributes.asp-->
     <div class="contact-form">
       <form>
         <div class="form-row">
           <input type="text" placeholder="Your Name" required>
           <input type="email" placeholder="Your Email" required>
+          <input type="phone" placeholder="Your Phone Number" required>
         </div>
         <input type="text" placeholder="Subject" required>
         <textarea rows="6" placeholder="Message" required></textarea>
