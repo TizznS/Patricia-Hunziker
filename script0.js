@@ -107,9 +107,19 @@ function toggleSidebar() {
   document.body.classList.toggle("sidebar-open");
 }
 
-// Render-Server vorab aufwecken
+// Render Server erlaubt in der Freeversion nur 15minuten bevor Server wieder in Sleepmodus geht. Hier ein kleiner Trick, damit nicht Renderseite kommt beim Formular übermitteln #Usability
+// Render Server ist innert 5 Sekunden wieder wach, mehrmals durch div. User getestet inntert 5 Sekunden schafft man nicht das Contact + Captcha auszufüllen nach Seiten laden.
+const pingURL = "https://kontaktformular.onrender.com/ping";
+
+// Direkt beim Laden
 window.addEventListener("DOMContentLoaded", () => {
-  fetch("https://kontaktformular.onrender.com/ping")
-    .then(() => console.log("Render-Server wurde erfolgreich gepingt."))
-    .catch(() => console.warn("Ping fehlgeschlagen – Render-Server evtl. noch im Schlaf."));
+  pingServer(); // direkt beim Start
+  setInterval(pingServer, 10 * 60 * 1000); // alle 10 Minuten
 });
+
+// Falls Endbenutzer Seite offen haben und länger als 15minuten darauf verweilen. Sollte 99,9% der Benutzerfälle abdecken. 
+function pingServer() {
+  fetch(pingURL)
+    .then(() => console.log("Server gepingt – sollte wach bleiben."))
+    .catch(() => console.warn("Ping fehlgeschlagen – Server evtl. im Schlaf."));
+}
