@@ -89,7 +89,7 @@ body {
 .hero {
   margin-left: 250px;
   height: 100vh;
-  background: url("lib/Patricia_Bild_01.jpg") no-repeat 60% center;
+  background: url("lib/Patricia_Bild_01.webp") no-repeat 60% center;
   background-size: cover;
   display: flex;
   justify-content: center;
