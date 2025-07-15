@@ -437,6 +437,7 @@ h2 {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 .info-block {
@@ -486,7 +487,38 @@ h2 {
   transform: scale(1.03);
 }
 
-/* 📱 Responsive Darstellung */
+/* Captcha */
+
+.captcha-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow: auto; 
+    box-sizing: border-box;
+    margin-top: 10px;
+    padding-right: 10px;
+    min-height: 100px; 
+}
+.captcha-wrapper .g-recaptcha {
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 412px) {
+
+    .g-recaptcha {
+        transform: scale(0.85);
+        transform-origin: 0 0;
+    }
+}
+@media (max-width: 360px) {
+
+    .g-recaptcha {
+        transform: scale(0.75);
+        transform-origin: 0 0;
+    }
+}
+
+/* Responsive Darstellung */
 @media (max-width: 1024px) {
   .resume-container {
     grid-template-columns: 1fr;
