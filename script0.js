@@ -125,3 +125,14 @@ function pingServer() {
     .then(() => console.log("Server gepingt – sollte wach bleiben."))
     .catch(() => console.warn("Ping fehlgeschlagen – Server evtl. im Schlaf."));
 }
+
+//performance Lighthouse Captcha nur laden wenn Sichtbar
+document.addEventListener("DOMContentLoaded", function() {
+  if (document.querySelector('#contact-form')) {
+    var recaptchaScript = document.createElement('script');
+    recaptchaScript.src = 'https://www.google.com/recaptcha/api.js';
+    recaptchaScript.async = true;
+    recaptchaScript.defer = true;
+    document.head.appendChild(recaptchaScript);
+  }
+});
